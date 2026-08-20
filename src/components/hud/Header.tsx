@@ -12,7 +12,8 @@ import {
   LayoutGrid,
   Languages
 } from 'lucide-react'
-import { GlowButton } from '../ui/GlowButton'
+import { GlowButton, GlowLink } from '../ui/GlowButton'
+import { getResumeUrl } from '../../utils/resume'
 import { soundFX } from '../../audio/soundFX'
 import { useLocalizedData } from '../../data/useLocalizedData'
 import { useT } from '../../i18n/translations'
@@ -198,16 +199,16 @@ export function Header({
             </button>
           </div>
 
-          <GlowButton
+          <GlowLink
             variant="ghost"
             size="sm"
             icon={<FileDown className="w-3.5 h-3.5 text-cyan-400" />}
-            onClick={() => {
-              window.open(language === 'pt' ? '/curriculo-luiz-sergio.pdf' : '/resume-luiz-sergio-en.pdf', '_blank')
-            }}
+            href={getResumeUrl(language)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t.header.resume}
-          </GlowButton>
+          </GlowLink>
 
           <GlowButton
             variant="emerald"

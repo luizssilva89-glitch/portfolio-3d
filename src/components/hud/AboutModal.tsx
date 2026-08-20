@@ -5,12 +5,15 @@ import {
   Zap,
   GraduationCap,
   Briefcase,
-  Building2
+  Building2,
+  FileDown
 } from 'lucide-react'
 import { useLocalizedData } from '../../data/useLocalizedData'
 import { useT } from '../../i18n/translations'
 import { soundFX } from '../../audio/soundFX'
-import { GlowButton } from '../ui/GlowButton'
+import { GlowButton, GlowLink } from '../ui/GlowButton'
+import { getResumeUrl } from '../../utils/resume'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 interface AboutModalProps {
   isOpen: boolean
@@ -22,6 +25,7 @@ interface AboutModalProps {
 export function AboutModal({ isOpen, onClose, onOpenTimeline, onOpenContact }: AboutModalProps) {
   const { profile } = useLocalizedData()
   const t = useT()
+  const { language } = useLanguage()
 
   useEffect(() => {
     if (isOpen) {
@@ -156,16 +160,29 @@ export function AboutModal({ isOpen, onClose, onOpenTimeline, onOpenContact }: A
             {t.aboutModal.timelineButton}
           </GlowButton>
 
-          <GlowButton
-            variant="cyan"
-            size="sm"
-            onClick={() => {
-              onClose()
-              onOpenContact()
-            }}
-          >
-            {t.aboutModal.contactButton}
-          </GlowButton>
+          <div className="flex items-center gap-2">
+            <GlowLink
+              variant="ghost"
+              size="sm"
+              icon={<FileDown className="w-3.5 h-3.5 text-cyan-400" />}
+              href={getResumeUrl(language)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.header.resume}
+            </GlowLink>
+
+            <GlowButton
+              variant="cyan"
+              size="sm"
+              onClick={() => {
+                onClose()
+                onOpenContact()
+              }}
+            >
+              {t.aboutModal.contactButton}
+            </GlowButton>
+          </div>
         </div>
 
       </div>

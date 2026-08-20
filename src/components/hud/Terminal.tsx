@@ -4,6 +4,7 @@ import { soundFX } from '../../audio/soundFX'
 import { useLocalizedData } from '../../data/useLocalizedData'
 import { useT } from '../../i18n/translations'
 import { useLanguage } from '../../i18n/LanguageContext'
+import { openResume } from '../../utils/resume'
 
 interface TerminalProps {
   isOpen: boolean
@@ -155,7 +156,7 @@ export function Terminal({ isOpen, onClose, onSelectProjectById }: TerminalProps
         break
 
       case 'cv':
-        window.open(language === 'pt' ? '/curriculo-luiz-sergio.pdf' : '/resume-luiz-sergio-en.pdf', '_blank')
+        openResume(language)
         result = <div className="text-cyan-400">{t.terminal.cvOpening}</div>
         break
 
