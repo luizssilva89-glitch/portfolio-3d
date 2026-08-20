@@ -98,6 +98,7 @@ export interface UiStrings {
     philosophyTitle: string
     education: string
     experience: string
+    sectorsTitle: string
     specialtiesTitle: string
     timelineButton: string
     contactButton: string
@@ -220,6 +221,7 @@ const pt: UiStrings = {
     philosophyTitle: "Filosofia & Perfil de Engenharia",
     education: "Bacharel em Sistemas de Informação (UniBarretos)",
     experience: "5+ anos de experiência sênior em produtos digitais",
+    sectorsTitle: "Setores Atendidos pelos Projetos",
     specialtiesTitle: "Especialidades Centrais de Engenharia",
     timelineButton: "Ver Linha do Tempo Completa",
     contactButton: "Entrar em Contato"
@@ -342,6 +344,7 @@ const en: UiStrings = {
     philosophyTitle: "Engineering Philosophy & Profile",
     education: "B.Sc. in Information Systems (UniBarretos)",
     experience: "5+ years of senior experience shipping digital products",
+    sectorsTitle: "Industries Served by the Projects",
     specialtiesTitle: "Core Engineering Specialties",
     timelineButton: "See Full Career Timeline",
     contactButton: "Get in Touch"

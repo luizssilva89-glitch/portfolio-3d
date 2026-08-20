@@ -191,23 +191,19 @@ export function ExecutiveView({ onSelectProject, onOpenContact }: ExecutiveViewP
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {['AI & Protocols', 'Backend & DDD', 'Frontend & 3D', 'DevOps & Cloud'].map((cat) => {
+          {Array.from(new Set(skillNodes.map((s) => s.category))).map((cat) => {
             const skillsInCat = skillNodes.filter((s) => s.category === cat)
-            const catColor =
-              cat === 'AI & Protocols'
-                ? 'text-cyan-400 border-cyan-500/30'
-                : cat === 'Backend & DDD'
-                ? 'text-emerald-400 border-emerald-500/30'
-                : cat === 'Frontend & 3D'
-                ? 'text-blue-400 border-blue-500/30'
-                : 'text-purple-400 border-purple-500/30'
+            const catColor = skillsInCat[0]?.color ?? '#06b6d4'
 
             return (
               <div
                 key={cat}
                 className="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-4"
               >
-                <h4 className={`text-sm font-mono font-bold border-b pb-2 ${catColor}`}>
+                <h4
+                  className="text-sm font-mono font-bold border-b pb-2"
+                  style={{ color: catColor, borderColor: `${catColor}4D` }}
+                >
                   {cat}
                 </h4>
                 <div className="space-y-3">

@@ -142,7 +142,7 @@ export const projectsEn: Project[] = [
   },
   {
     id: "erp",
-    title: "Nexo ERP",
+    title: "ERP",
     tagline: "Complete Retail Management",
     shortDescription: "Modern API-first ERP for marketplace sellers, physical stores and assisted sales, with tax compliance, logistics and a unified multichannel catalog.",
     fullDescription: "Modern, modular enterprise resource planning system built specifically for the Brazilian retail market. It unifies tax compliance (electronic invoicing), logistics and order dispatch, financial control with bank reconciliation, a unified catalog across multiple sales channels (Mercado Livre, Shopee, own store), and nine-role RBAC with full per-action audit logging. The tax-compliance layer is designed as a pluggable provider abstraction, allowing the invoice issuer to be swapped without rewriting domain rules.",

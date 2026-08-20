@@ -4,7 +4,8 @@ import {
   Sparkles,
   Zap,
   GraduationCap,
-  Briefcase
+  Briefcase,
+  Building2
 } from 'lucide-react'
 import { useLocalizedData } from '../../data/useLocalizedData'
 import { useT } from '../../i18n/translations'
@@ -96,6 +97,28 @@ export function AboutModal({ isOpen, onClose, onOpenTimeline, onOpenContact }: A
                 <div className="text-base sm:text-lg font-mono font-bold text-cyan-300 mt-0.5">{s.value}</div>
               </div>
             ))}
+          </div>
+
+          {/* Sectors Served */}
+          <div className="space-y-3">
+            <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold flex items-center gap-1.5">
+              <Building2 className="w-4 h-4 text-emerald-400" /> {t.aboutModal.sectorsTitle}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {profile.sectors.map((s, idx) => (
+                <div
+                  key={idx}
+                  className="p-2.5 rounded-xl bg-slate-900/50 border border-slate-800 flex items-center justify-between gap-3"
+                >
+                  <span className="text-xs font-mono font-semibold text-slate-200 shrink-0">
+                    {s.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-500 text-right">
+                    {s.project}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Superpowers */}

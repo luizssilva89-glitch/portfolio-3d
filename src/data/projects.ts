@@ -142,7 +142,7 @@ export const projects: Project[] = [
   },
   {
     id: "erp",
-    title: "Nexo ERP",
+    title: "ERP",
     tagline: "Gestão Completa para Lojistas",
     shortDescription: "ERP API-first moderno para lojistas de marketplaces, lojas físicas e vendas assistidas, com controle fiscal, logística e catálogo unificado multicanal.",
     fullDescription: "Sistema integrado de gestão empresarial moderno e modular, construído especificamente para o mercado varejista brasileiro. Integra em uma única arquitetura sincronizada: controle fiscal (NF-e, NFC-e), logística e despacho de pedidos, controle financeiro com conciliação bancária, catálogo unificado para múltiplos canais de venda (Mercado Livre, Shopee, loja própria) e RBAC de nove papéis com auditoria completa por ação. A camada fiscal é desenhada como uma abstração de provedor plugável, permitindo trocar o emissor de NF-e sem reescrever regras de domínio.",

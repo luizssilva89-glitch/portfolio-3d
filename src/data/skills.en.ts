@@ -1,46 +1,54 @@
 import { SkillNode } from '../types'
 
 export const skillNodesEn: SkillNode[] = [
-  // AI & Protocols
+  // AI & Data Extraction
   {
-    name: "AI Gateways & Routing",
-    category: "AI & Protocols",
-    level: 98,
+    name: "Structured Extraction with LLMs",
+    category: "AI & Data Extraction",
+    level: 97,
     color: "#06b6d4",
     position: [-4.5, 3.5, 2],
-    details: "Smart routing across 290+ providers, load balancing, dynamic failover and semantic fallbacks."
+    details: "Strict Zod schemas, prompt-injection defenses and application-side validation before anything is written to the database."
   },
   {
-    name: "Token Compression & Context",
-    category: "AI & Protocols",
+    name: "Cost-Cascading Pipelines",
+    category: "AI & Data Extraction",
     level: 95,
     color: "#06b6d4",
     position: [-2.5, 4.8, 1],
-    details: "Semantic token compression algorithms that preserve code syntax with an 89% cost reduction."
+    details: "Every field routed through cost-ordered layers, from native PDF text to computer vision as a last resort, with a per-layer auditable ledger."
   },
   {
-    name: "Model Context Protocol (MCP)",
-    category: "AI & Protocols",
-    level: 96,
-    color: "#06b6d4",
-    position: [-5.2, 1.8, 3],
-    details: "Built 104+ observability and control tools for Claude, Cursor and VS Code agents."
-  },
-  {
-    name: "Agent-to-Agent (A2A Protocol)",
-    category: "AI & Protocols",
+    name: "Multi-Provider AI Fallback",
+    category: "AI & Data Extraction",
     level: 94,
     color: "#06b6d4",
+    position: [-5.2, 1.8, 3],
+    details: "Seven-provider chain to absorb organization-wide rate limits, with the product fully functional when no API key is configured at all."
+  },
+  {
+    name: "Guardrails & Zero Hallucination",
+    category: "AI & Data Extraction",
+    level: 96,
+    color: "#06b6d4",
     position: [-3.8, 2.2, 4],
-    details: "JSON-RPC 2.0 server for communication, task delegation and collaboration between autonomous agents."
+    details: "The language layer never gets database access: it only extracts filters, and the reply is built on results from an application-controlled query."
   },
   {
     name: "Multimodal LLMs & Vision",
-    category: "AI & Protocols",
+    category: "AI & Data Extraction",
     level: 96,
     color: "#06b6d4",
     position: [-1.8, 3.2, 3],
-    details: "Visual extraction from documents and forms with Claude 3.5 Sonnet Vision and Gemini Pro."
+    details: "Visual extraction from payslips, handwritten timecards and documents with Claude Sonnet Vision and Gemini."
+  },
+  {
+    name: "Pattern Learning & Caching",
+    category: "AI & Data Extraction",
+    level: 92,
+    color: "#06b6d4",
+    position: [-3.0, 4.2, 5],
+    details: "Memorizing recurring corrections per user and document format to cut repeated calls, combined with API-level prompt caching."
   },
 
   // Backend & DDD
@@ -66,7 +74,7 @@ export const skillNodesEn: SkillNode[] = [
     level: 95,
     color: "#10b981",
     position: [5.2, 1.8, 3],
-    details: "Batch async processing, controlled concurrency, backoff retries and Redis Streams."
+    details: "Batch async processing, controlled concurrency, backoff retries and schedulers idempotent by their own key."
   },
   {
     name: "PostgreSQL, Prisma & Drizzle",
@@ -74,7 +82,7 @@ export const skillNodesEn: SkillNode[] = [
     level: 97,
     color: "#10b981",
     position: [3.8, 2.2, 4],
-    details: "Complex relational modeling, safe migrations, RLS, geo-spatial PostGIS queries and ACID transactions."
+    details: "Complex relational modeling, domain-versioned migrations, RLS, indexed geo-spatial queries and ACID transactions."
   },
   {
     name: "Binary Protocols & Reverse Eng.",
@@ -84,11 +92,27 @@ export const skillNodesEn: SkillNode[] = [
     position: [1.8, 3.2, 3],
     details: "Handling zipped binary files, native XML schema generation (.PJC) and data pipelines."
   },
+  {
+    name: "Python, FastAPI & Microservices",
+    category: "Backend & DDD",
+    level: 90,
+    color: "#10b981",
+    position: [3.0, 4.2, 5],
+    details: "Isolated facial-biometrics service with dlib and face_recognition, plus a .PJC generator in pure Python 3 with zero external dependencies."
+  },
+  {
+    name: "Financial Precision & Ledgers",
+    category: "Backend & DDD",
+    level: 96,
+    color: "#10b981",
+    position: [5.0, 3.0, 5],
+    details: "Money as integer cents or numeric(19,4) and never a float, balances derived from an append-only ledger, and exact cent distribution across installments."
+  },
 
-  // Frontend & 3D
+  // Frontend, Desktop & 3D
   {
     name: "React 19 & Next.js 15/16",
-    category: "Frontend & 3D",
+    category: "Frontend, Desktop & 3D",
     level: 98,
     color: "#3b82f6",
     position: [-4.5, -2.5, 2],
@@ -96,15 +120,15 @@ export const skillNodesEn: SkillNode[] = [
   },
   {
     name: "Three.js & React Three Fiber",
-    category: "Frontend & 3D",
+    category: "Frontend, Desktop & 3D",
     level: 92,
     color: "#3b82f6",
     position: [-2.5, -4.0, 1],
-    details: "Immersive 3D environments, custom shaders, PBR materials, volumetric lighting and interactive animation."
+    details: "Immersive 3D environments, PBR materials, volumetric lighting, bloom post-processing and interactive animation."
   },
   {
     name: "TypeScript Strict & Zod",
-    category: "Frontend & 3D",
+    category: "Frontend, Desktop & 3D",
     level: 99,
     color: "#3b82f6",
     position: [-5.2, -1.2, 3],
@@ -112,25 +136,41 @@ export const skillNodesEn: SkillNode[] = [
   },
   {
     name: "Tailwind CSS & Glassmorphism",
-    category: "Frontend & 3D",
+    category: "Frontend, Desktop & 3D",
     level: 96,
     color: "#3b82f6",
     position: [-3.8, -2.8, 4],
     details: "Modern design systems, fluid micro-interactions, fully responsive layouts and dark holographic themes."
   },
+  {
+    name: "Electron & Desktop Apps",
+    category: "Frontend, Desktop & 3D",
+    level: 93,
+    color: "#3b82f6",
+    position: [-1.8, -3.0, 3],
+    details: "Secure contextBridge IPC with no Node in the renderer, electron-builder packaging, and credentials in the OS-native vault."
+  },
+  {
+    name: "FFmpeg & Media Pipelines",
+    category: "Frontend, Desktop & 3D",
+    level: 90,
+    color: "#3b82f6",
+    position: [-3.0, -4.5, 5],
+    details: "Cinematic video assembly with Ken Burns effects, soundtrack mixing, a bundled binary inside the app, and batch WebP/AVIF conversion."
+  },
 
-  // DevOps & Cloud
+  // DevOps, Security & Cloud
   {
     name: "Turborepo & Monorepos",
-    category: "DevOps & Cloud",
+    category: "DevOps, Security & Cloud",
     level: 96,
     color: "#a855f7",
     position: [4.5, -2.5, 2],
-    details: "Scalable monorepo architecture with smart build caching, pnpm workspaces and package orchestration."
+    details: "Scalable monorepo architecture with smart build caching, pnpm workspaces and package orchestration by bounded context."
   },
   {
     name: "Docker, Podman & Coolify",
-    category: "DevOps & Cloud",
+    category: "DevOps, Security & Cloud",
     level: 94,
     color: "#a855f7",
     position: [2.5, -4.0, 1],
@@ -138,18 +178,42 @@ export const skillNodesEn: SkillNode[] = [
   },
   {
     name: "Supabase & Cloudflare CDN",
-    category: "DevOps & Cloud",
+    category: "DevOps, Security & Cloud",
     level: 95,
     color: "#a855f7",
     position: [5.2, -1.2, 3],
-    details: "Row Level Security, Storage, Edge Functions, DDoS protection, CDN caching and global routing."
+    details: "Row Level Security, private Storage, Edge Functions, DDoS protection, CDN caching and global routing."
   },
   {
-    name: "Playwright Stealth & Automation",
-    category: "DevOps & Cloud",
+    name: "Security & Authentication",
+    category: "DevOps, Security & Cloud",
+    level: 96,
+    color: "#a855f7",
+    position: [1.8, -3.0, 3],
+    details: "Argon2id, TOTP-based MFA, revocable rotating refresh tokens, JWT sessions with jose, multi-tenant RLS and brute-force account lockout."
+  },
+  {
+    name: "Integration Testing & CI",
+    category: "DevOps, Security & Cloud",
+    level: 95,
+    color: "#a855f7",
+    position: [3.0, -4.5, 5],
+    details: "Vitest suites running against a real Postgres, explicit cross-tenant isolation tests, and lint/typecheck/test/build on every pull request."
+  },
+  {
+    name: "Compliance & Data Privacy",
+    category: "DevOps, Security & Cloud",
+    level: 90,
+    color: "#a855f7",
+    position: [5.0, -3.5, 5],
+    details: "Personal-data export and deletion, a logger that never exposes a password, token, secret or national ID, audit trails, and feature flags gating sensitive features."
+  },
+  {
+    name: "Playwright & E2E Automation",
+    category: "DevOps, Security & Cloud",
     level: 93,
     color: "#a855f7",
     position: [3.8, -2.8, 4],
-    details: "Advanced headless browser automation with human-like cursor emulation and solver integration."
+    details: "Headless browser automation for end-to-end testing of critical flows and regression checks before deploy."
   }
 ]
