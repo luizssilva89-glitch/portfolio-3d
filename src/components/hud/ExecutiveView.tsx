@@ -2,13 +2,19 @@ import { useState } from 'react'
 import {
   Layers,
   Cpu,
-  ArrowRight
+  ArrowRight,
+  Briefcase,
+  Globe,
+  MapPin,
+  FileDown
 } from 'lucide-react'
 import { useLocalizedData } from '../../data/useLocalizedData'
 import { useT } from '../../i18n/translations'
 import { Project } from '../../types'
 import { Badge } from '../ui/Badge'
-import { GlowButton } from '../ui/GlowButton'
+import { GlowButton, GlowLink } from '../ui/GlowButton'
+import { getResumeUrl } from '../../utils/resume'
+import { useLanguage } from '../../i18n/LanguageContext'
 import { ProjectIcon } from '../ui/ProjectIcon'
 import { soundFX } from '../../audio/soundFX'
 
@@ -20,6 +26,7 @@ interface ExecutiveViewProps {
 export function ExecutiveView({ onSelectProject, onOpenContact }: ExecutiveViewProps) {
   const { projects, skillNodes, profile } = useLocalizedData()
   const t = useT()
+  const { language } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
   const categories = [
@@ -235,17 +242,55 @@ export function ExecutiveView({ onSelectProject, onOpenContact }: ExecutiveViewP
       </div>
 
       {/* Call to action footer */}
-      <div className="p-8 rounded-3xl bg-gradient-to-tr from-cyan-950/60 via-slate-950 to-purple-950/60 border border-cyan-500/40 text-center space-y-4">
+      <div className="p-8 rounded-3xl bg-gradient-to-tr from-cyan-950/60 via-slate-950 to-purple-950/60 border border-cyan-500/40 text-center space-y-5">
+        {/* Selo de disponibilidade */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+          <span className="relative flex w-2 h-2">
+            <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+            <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
+          </span>
+          {t.executiveView.availabilityStatus}
+        </div>
+
         <h3 className="text-xl sm:text-2xl font-mono font-bold text-white">
           {t.executiveView.ctaTitle}
         </h3>
         <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
           {t.executiveView.ctaSubtitle}
         </p>
-        <div className="pt-2">
+
+        {/* Condicoes de contratacao */}
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {[
+            { icon: <Briefcase className="w-3.5 h-3.5 text-emerald-400" />, label: t.executiveView.availabilityContract },
+            { icon: <Globe className="w-3.5 h-3.5 text-cyan-400" />, label: t.executiveView.availabilityModel },
+            { icon: <MapPin className="w-3.5 h-3.5 text-purple-400" />, label: t.executiveView.availabilityLocation }
+          ].map((item, idx) => (
+            <span
+              key={idx}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-mono text-slate-200 bg-slate-950/70 border border-slate-800"
+            >
+              {item.icon}
+              {item.label}
+            </span>
+          ))}
+        </div>
+
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <GlowButton variant="emerald" size="lg" onClick={onOpenContact}>
             {t.executiveView.ctaButton}
           </GlowButton>
+
+          <GlowLink
+            variant="ghost"
+            size="lg"
+            icon={<FileDown className="w-4 h-4 text-cyan-400" />}
+            href={getResumeUrl(language)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.executiveView.ctaResumeButton}
+          </GlowLink>
         </div>
       </div>
 

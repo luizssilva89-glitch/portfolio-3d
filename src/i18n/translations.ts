@@ -117,6 +117,11 @@ export interface UiStrings {
     ctaTitle: string
     ctaSubtitle: string
     ctaButton: string
+    ctaResumeButton: string
+    availabilityStatus: string
+    availabilityContract: string
+    availabilityModel: string
+    availabilityLocation: string
   }
   projectStations: {
     orbitLabel: string
@@ -238,8 +243,13 @@ const pt: UiStrings = {
     skillsTitle: "Matriz de Competências & Domínio Tecnológico",
     skillsSubtitle: "Especialidades práticas aplicadas em produtos reais de alta disponibilidade",
     ctaTitle: "Pronto para construir o próximo grande produto?",
-    ctaSubtitle: "Entre em contato direto para discutir oportunidades de projetos de alto impacto, arquitetura de sistemas ou novos produtos.",
-    ctaButton: "Iniciar Conversa no WhatsApp"
+    ctaSubtitle: "Disponível para vagas efetivas em tempo integral e também para projetos de arquitetura de sistemas. Entre em contato direto para conversar sobre a oportunidade.",
+    ctaButton: "Iniciar Conversa no WhatsApp",
+    ctaResumeButton: "Baixar Currículo",
+    availabilityStatus: "Disponível para contratação",
+    availabilityContract: "Tempo integral · CLT ou PJ",
+    availabilityModel: "Remoto, híbrido ou presencial",
+    availabilityLocation: "Barretos-SP e região"
   },
   projectStations: {
     orbitLabel: "Estação"
@@ -361,8 +371,13 @@ const en: UiStrings = {
     skillsTitle: "Skill Matrix & Technical Domain",
     skillsSubtitle: "Practical expertise applied to real, high-availability products",
     ctaTitle: "Ready to build the next big product?",
-    ctaSubtitle: "Reach out directly to discuss high-impact project opportunities, systems architecture or new products.",
-    ctaButton: "Start a Conversation on WhatsApp"
+    ctaSubtitle: "Available for full time roles and also for systems architecture projects. Reach out directly to talk about the opportunity.",
+    ctaButton: "Start a Conversation on WhatsApp",
+    ctaResumeButton: "Download Resume",
+    availabilityStatus: "Available for hire",
+    availabilityContract: "Full time · employee or contractor",
+    availabilityModel: "Remote, hybrid or on-site",
+    availabilityLocation: "Barretos, SP, Brazil"
   },
   projectStations: {
     orbitLabel: "Station"
